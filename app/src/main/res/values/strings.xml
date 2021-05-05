@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">DB Diaper Tracker</string>
+    <string name="rb_dirty">Dirty</string>
+    <string name="rb_wet">Wet</string>
+    <string name="rb_dry">Dry</string>
+    <string name="bt_add">Add</string>
+    <string name="bt_clear">Clear</string>
+    <string name="et_time">Enter time!</string>
+    <string name="tv_title">-- Diaper tracker --</string>
+    <string name="description">Change baby\'s station</string>
+    <string name="iv_bb_face">baby face</string>
+    <string name="tv_tracks"></string>
+    <string name="tv_counter">the number of changed diapers is: 0</string>
+</resources>

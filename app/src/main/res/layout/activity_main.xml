@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="myActivity"
+            type="com.example.dbdiapertracker.MainActivity" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/eggshell"
+        android:padding="10dp"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/main_activity_iv_change_station"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.01999998"
+            app:srcCompat="@drawable/ic_baseline_baby_changing_station_24" />
+
+        <RadioGroup
+            android:id="@+id/main_activity_rbg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_activity_iv_change_station"
+            app:layout_constraintVertical_bias="0.050000012">
+
+            <RadioButton
+                android:id="@+id/main_activity_rb_dirty"
+                style="@style/Rb_Styles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rb_dirty" />
+
+            <RadioButton
+                android:id="@+id/main_activity_rb_wet"
+                style="@style/Rb_Styles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rb_wet" />
+
+            <RadioButton
+                android:id="@+id/main_activity_rb_dry"
+                style="@style/Rb_Styles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/rb_dry" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/main_activity_et_time"
+            style="@style/Rb_Styles"
+            android:layout_width="392dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/et_time"
+            android:inputType="time"
+            android:textColorHint="@color/black_coral"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_activity_rbg" />
+
+        <Button
+            android:id="@+id/main_activity_bt_add_diaper"
+            style="@style/Rb_Styles"
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/melon"
+            android:text="@string/bt_add"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/main_activity_bt_clear_diapers"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_activity_et_time"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/main_activity_bt_clear_diapers"
+            style="@style/Rb_Styles"
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/melon"
+            android:text="@string/bt_clear"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/main_activity_bt_add_diaper"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/main_activity_bt_add_diaper"
+            app:layout_constraintTop_toTopOf="@+id/main_activity_bt_add_diaper" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/Rb_Styles"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{myActivity.type}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.526"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_activity_bt_add_diaper"
+            app:layout_constraintVertical_bias="0.039" />
+
+        <ScrollView
+            android:id="@+id/main_content_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/main_activity_tv_diapers_counter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/main_activity_iv_baby_face1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/iv_bb_face"
+                    app:srcCompat="@drawable/ic_babyface" />
+
+                <TextView
+                    android:id="@+id/main_activity_tv_tracks"
+                    style="@style/Rb_Styles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_tracks" />
+
+                <ImageView
+                    android:id="@+id/main_activity_iv_baby_face2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/iv_bb_face"
+                    app:srcCompat="@drawable/ic_babyface" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/main_activity_tv_diapers_counter"
+            style="@style/Rb_Styles"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_counter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_content_scroll_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
